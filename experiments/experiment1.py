@@ -55,7 +55,9 @@ def experiment(a, b, tList, sketch, numRepeat, numBoot):
                 resultBootInfty[r, i, boot] = numpy.max(numpy.abs(res))
                 numIterBoot[r, i, boot] = results[2]
 
-        print('Iteration ' + str(r) + ' has finished!')
+        avgIterEmpirical = numpy.mean(numIterEmpirical[r, :])
+        avgIterBoot = numpy.mean(numpy.mean(numIterBoot[r, :, :]))
+        print('Iteration ' + str(r) + ': average iter of solvers are ' + str(avgIterEmpirical) + ' and ' + str(avgIterBoot))
 
     mdict = {'tList': tList,
              'resultEmpiricalL2': resultEmpiricalL2,
@@ -67,12 +69,13 @@ def experiment(a, b, tList, sketch, numRepeat, numBoot):
     return mdict
 
 if __name__ == '__main__':
+    #dataname = 'YearPredictionMSD'
     dataname = 'abalone'
-    inputpath = '../data/abalone.mat'
+    inputpath = '../data/' + dataname + '.mat'
     sketch = 'gaussian'
     outputpath = '../results/result_' + dataname[0:2] + '_' + sketch + '.mat'
     numBoot = 20
-    numRepeat = 1000
+    numRepeat = 100
     
     a, b = loaddata(inputpath)
     n, d = a.shape
