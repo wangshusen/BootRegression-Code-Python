@@ -1,4 +1,5 @@
 import numpy
+import scipy.io
 from sklearn.datasets import load_svmlight_file
 
 def txt2mat(dataname, isTransformY=False, isRemoveEmpty=False):
