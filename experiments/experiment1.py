@@ -69,8 +69,8 @@ def experiment(a, b, tList, sketch, numRepeat, numBoot):
     return mdict
 
 if __name__ == '__main__':
-    #dataname = 'YearPredictionMSD'
-    dataname = 'abalone'
+    dataname = 'YearPredictionMSD'
+    #dataname = 'abalone'
     inputpath = '../data/' + dataname + '.mat'
     sketch = 'gaussian'
     outputpath = '../results/result_' + dataname[0:2] + '_' + sketch + '.mat'
