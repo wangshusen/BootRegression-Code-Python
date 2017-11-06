@@ -20,5 +20,10 @@ if __name__ == '__main__':
     dataname = 'YearPredictionMSD'
     txt2mat(dataname)
     
+    dataname = 'cadata'
+    txt2mat(dataname)
+    
+    dataname = 'cpusmall_scale'
+    txt2mat(dataname)
     
     
